@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Ayush Singh's portfolio — BCA graduate, aspiring software developer and data analytics enthusiast.">
+<meta name="theme-color" content="#080d19">
+<title>Ayush Singh | Developer Portfolio</title>
+<style>
+:root{--bg:#080d19;--surface:#101a2c;--surface2:#14223a;--text:#f4f7ff;--muted:#a8b5cc;--line:rgba(255,255,255,.1);--mint:#68e0bd;--blue:#8aa7ff;--glow:rgba(104,224,189,.17)}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:85px}
+body{font-family:Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif;background:radial-gradient(ellipse at 78% 4%,#172c4c 0,transparent 32%),radial-gradient(ellipse at 5% 45%,#10253a 0,transparent 28%),var(--bg);color:var(--text);line-height:1.7}
+a{color:inherit;text-decoration:none}
+.wrap{width:min(1120px,90%);margin:auto}
+header{position:sticky;top:0;z-index:20;background:rgba(8,13,25,.84);backdrop-filter:blur(18px);border-bottom:1px solid var(--line)}
+nav{height:74px;display:flex;align-items:center;justify-content:space-between}
+.logo{font-size:1.15rem;font-weight:900;letter-spacing:1px}.logo span{color:var(--mint)}
+.navlinks{display:flex;gap:25px;color:var(--muted);font-size:.92rem}.navlinks a:hover,.social-link:hover{color:var(--mint)}
+.menu{display:none;background:none;color:var(--text);border:1px solid var(--line);border-radius:9px;padding:7px 11px;font-size:1.1rem}
+.hero{min-height:670px;display:grid;grid-template-columns:1.3fr .7fr;align-items:center;gap:65px;padding:90px 0 75px}
+.kicker{display:inline-flex;align-items:center;gap:9px;color:var(--mint);font-size:.78rem;font-weight:800;letter-spacing:2px;text-transform:uppercase}
+.dot{height:8px;width:8px;background:var(--mint);border-radius:50%;box-shadow:0 0 14px var(--mint)}
+h1{font-size:clamp(3rem,7vw,5.7rem);line-height:1.02;letter-spacing:-3px;margin:20px 0}
+.gradient{background:linear-gradient(90deg,var(--mint),var(--blue));background-clip:text;color:transparent}
+.hero-copy{max-width:680px;color:var(--muted);font-size:1.08rem}
+.actions{display:flex;gap:13px;flex-wrap:wrap;margin-top:30px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;padding:12px 19px;border-radius:12px;border:1px solid var(--line);font-weight:750;font-size:.92rem;transition:.22s}
+.btn:hover{transform:translateY(-3px);border-color:var(--mint)}
+.primary{background:var(--mint);color:#06131a;border-color:var(--mint)}
+.hero-card{position:relative;background:linear-gradient(150deg,#1b2e4d,#10192b 70%);border:1px solid var(--line);border-radius:28px;padding:30px;box-shadow:0 30px 90px #0005;overflow:hidden}
+.hero-card:before{content:"";position:absolute;width:190px;height:190px;border-radius:50%;background:var(--glow);filter:blur(28px);right:-65px;top:-70px}
+.avatar{position:relative;width:104px;height:104px;border-radius:28px;background:linear-gradient(135deg,var(--mint),var(--blue));display:grid;place-items:center;color:#07131c;font-size:2.3rem;font-weight:950;box-shadow:0 12px 35px #0004;margin-bottom:22px}
+.hero-card h2{font-size:1.65rem}.hero-card>p{color:var(--muted);font-size:.94rem}
+.card-label{margin-top:24px;color:var(--mint);font-size:.72rem;letter-spacing:1.5px;font-weight:800;text-transform:uppercase}
+.quick{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:12px}
+.quick div{background:#ffffff08;border:1px solid var(--line);padding:12px;border-radius:12px}
+.quick b{display:block;font-size:1rem}.quick small{color:var(--muted);font-size:.76rem}
+section{padding:84px 0}
+.section-head{margin-bottom:32px}.section-head .kicker{margin-bottom:8px}
+h2.section-title{font-size:clamp(2rem,4vw,2.8rem);letter-spacing:-1.3px;line-height:1.2}
+.sub{color:var(--muted);max-width:680px;margin-top:10px}
+.grid2{display:grid;grid-template-columns:1.15fr .85fr;gap:20px}
+.panel{background:linear-gradient(145deg,var(--surface2),var(--surface));border:1px solid var(--line);border-radius:21px;padding:28px}
+.panel p{color:var(--muted)}
+.panel h3{font-size:1.2rem;margin-bottom:10px}
+.skill-groups{display:grid;gap:18px;margin-top:20px}
+.skill-group strong{display:block;font-size:.9rem;margin-bottom:9px;color:#dce6fb}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chip{padding:7px 11px;border:1px solid var(--line);background:#ffffff08;border-radius:999px;color:#dce6f7;font-size:.82rem}
+.info-list{display:grid;gap:15px;margin-top:17px}
+.info-item{border-left:2px solid var(--mint);padding-left:14px}
+.info-item b{display:block}.info-item span{color:var(--muted);font-size:.9rem}
+.feature-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.feature{padding:23px;background:var(--surface);border:1px solid var(--line);border-radius:18px;transition:.2s}
+.feature:hover,.project:hover{transform:translateY(-4px);border-color:#68e0bd66}
+.feature-icon{height:43px;width:43px;border-radius:13px;display:grid;place-items:center;background:var(--glow);font-size:1.25rem;margin-bottom:16px}
+.feature h3{font-size:1.05rem;margin-bottom:7px}.feature p{font-size:.9rem;color:var(--muted)}
+.project-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:17px}
+.project{display:flex;flex-direction:column;min-height:300px;padding:24px;border-radius:19px;background:linear-gradient(155deg,#172640,#101827);border:1px solid var(--line);transition:.2s}
+.project-no{font-size:.73rem;color:var(--mint);font-weight:850;letter-spacing:1.4px}
+.project h3{font-size:1.22rem;margin:13px 0 8px}.project p{color:var(--muted);font-size:.9rem}
+.tags{display:flex;flex-wrap:wrap;gap:7px;margin-top:17px}.tags span{font-size:.73rem;padding:5px 9px;border-radius:7px;background:#ffffff0c;color:#dce6f7}
+.project-status{margin-top:auto;padding-top:18px;font-size:.75rem;color:var(--mint)}
+.note{margin-top:17px;color:var(--muted);font-size:.83rem}
+.timeline{display:grid;grid-template-columns:1fr 1fr;gap:17px}
+.timeline .panel{position:relative}
+.timeline .year{color:var(--mint);font-size:.75rem;font-weight:800;letter-spacing:1px}
+.timeline h3{margin:7px 0}
+.contact-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:20px}
+.contact-methods{display:grid;gap:12px;margin-top:20px}
+.contact-method{display:flex;align-items:center;gap:13px;padding:13px;border-radius:13px;background:#ffffff08;border:1px solid var(--line);min-width:0}
+.contact-icon{width:39px;height:39px;flex:0 0 39px;border-radius:11px;background:var(--glow);display:grid;place-items:center;color:var(--mint);font-weight:900}
+.contact-method small{display:block;color:var(--muted);font-size:.75rem}
+.contact-method strong{font-size:.87rem;overflow-wrap:anywhere}
+.socials{display:flex;flex-wrap:wrap;gap:10px;margin-top:20px}
+.social-link{padding:9px 13px;border-radius:10px;border:1px solid var(--line);font-size:.84rem;font-weight:700}
+.cta{background:linear-gradient(115deg,#18334a,#15213a);border:1px solid #68e0bd44;border-radius:22px;padding:29px}
+.cta p{color:var(--muted);margin-top:7px}
+
+.contact-form{display:grid;gap:13px;margin-top:20px}
+.form-field{display:grid;gap:6px}
+.form-field label{font-size:.82rem;font-weight:700;color:#dce6fb}
+.form-field input,.form-field textarea{width:100%;padding:12px 13px;border:1px solid var(--line);border-radius:11px;background:#091323;color:var(--text);font:inherit;font-size:.9rem;outline:none;resize:vertical}
+.form-field input:focus,.form-field textarea:focus{border-color:var(--mint);box-shadow:0 0 0 3px #68e0bd1c}
+.form-field textarea{min-height:125px}
+.form-help{font-size:.76rem;color:var(--muted);margin-top:2px}
+.contact-form .btn{cursor:pointer;width:fit-content}
+footer{border-top:1px solid var(--line);padding:25px 0;color:var(--muted);font-size:.84rem}
+.footer-inner{display:flex;justify-content:space-between;gap:15px;flex-wrap:wrap}
+@media(max-width:850px){.hero{grid-template-columns:1fr;gap:35px;min-height:auto}.hero-card{max-width:520px}.grid2,.contact-grid{grid-template-columns:1fr}.feature-grid{grid-template-columns:1fr 1fr}.project-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:580px){nav{height:66px}.menu{display:block}.navlinks{display:none;position:absolute;top:66px;left:0;right:0;padding:18px 5%;background:#0b1425;border-bottom:1px solid var(--line);flex-direction:column;gap:14px}.navlinks.open{display:flex}.hero{padding:68px 0 45px}h1{letter-spacing:-2px}.hero-copy{font-size:1rem}.actions .btn{width:100%}section{padding:62px 0}.feature-grid,.project-grid,.timeline{grid-template-columns:1fr}.panel{padding:22px}.hero-card{padding:24px}.footer-inner{flex-direction:column}}
+</style>
+</head>
+<body>
+<header>
+ <div class="wrap"><nav>
+  <a class="logo" href="#home">AYUSH<span>.</span></a>
+  <button class="menu" id="menuBtn" aria-label="Toggle navigation" aria-expanded="false">☰</button>
+  <div class="navlinks" id="navlinks"><a href="#about">About</a><a href="#skills">Skills</a><a href="#features">What I Do</a><a href="#projects">Projects</a><a href="#contact">Contact</a></div>
+ </nav></div>
+</header>
+<main>
+<section class="wrap hero" id="home">
+ <div>
+  <div class="kicker"><span class="dot"></span> Welcome to my portfolio</div>
+  <h1>Hi, I'm<br><span class="gradient">Ayush Singh.</span></h1>
+  <p class="hero-copy">I'm a BCA graduate and aspiring software developer with an interest in data analytics. I enjoy solving practical problems and building useful digital experiences with clean, responsive design. I enjoy learning new technologies, solving practical problems and building digital experiences that are useful, clear and easy to use.</p>
+  <div class="actions">
+   <a class="btn primary" href="#projects">Explore my work ↗</a>
+   <a class="btn" href="mailto:Binarywithayush@gmail.com">Let's connect</a>
+  </div>
+ </div>
+ <aside class="hero-card">
+  <div class="avatar">AS</div>
+  <h2>Ayush Singh</h2>
+  <p>Developer in progress · Creative problem solver</p>
+  <div class="card-label">At a glance</div>
+  <div class="quick">
+   <div><b>BCA</b><small>Education</small></div>
+   <div><b>2026</b><small>BCA completed</small></div>
+   <div><b>Delhi, India</b><small>Location</small></div>
+   <div><b>Tech + Data</b><small>Interests</small></div>
+  </div>
+ </aside>
+</section>
+
+<section id="about">
+ <div class="wrap">
+  <div class="section-head"><div class="kicker">01 / About me</div><h2 class="section-title">A curious learner with a builder's mindset.</h2><p class="sub">A little more about my background, interests and the direction I'm working towards.</p></div>
+  <div class="grid2">
+   <div class="panel">
+    <h3>My introduction</h3>
+    <p>I am a Bachelor of Computer Applications (BCA) graduate from the Institute of Technology and Science, Ghaziabad, having completed my degree in 2026. I am interested in software development, data analytics and technology-driven problem solving. I enjoy building, testing and improving practical projects.</p>
+    <p style="margin-top:13px">My core skills include Java, Python, C#, HTML, CSS, JavaScript fundamentals, MySQL, Excel and MS Office. I also use tools such as Visual Studio Code, Eclipse and Git, and enjoy applying analytical thinking and problem-solving to practical tasks.</p>
+   </div>
+   <div class="panel">
+    <h3>Education & direction</h3>
+    <div class="info-list">
+     <div class="info-item"><b>Bachelor of Computer Applications</b><span>Institute of Technology and Science, Ghaziabad · Completed 2026</span></div>
+     <div class="info-item"><b>Senior Secondary (Class XII)</b><span>CBSE · Completed 2024</span></div>
+     <div class="info-item"><b>Secondary (Class X)</b><span>CBSE · Completed 2022</span></div>
+     <div class="info-item"><b>Current focus</b><span>Software development, data analytics and portfolio projects</span></div>
+    </div>
+   </div>
+  </div>
+ </div>
+</section>
+
+<section id="skills">
+ <div class="wrap">
+  <div class="section-head"><div class="kicker">02 / Technical toolkit</div><h2 class="section-title">Technical skills and tools.</h2><p class="sub">A snapshot of the programming languages, web technologies and tools I can work with.</p></div>
+  <div class="panel">
+   <div class="skill-groups">
+    <div class="skill-group"><strong>Programming languages</strong><div class="chips"><span class="chip">Java</span><span class="chip">Python</span><span class="chip">C#</span></div></div>
+    <div class="skill-group"><strong>Web technologies</strong><div class="chips"><span class="chip">HTML5</span><span class="chip">CSS3</span><span class="chip">JavaScript fundamentals</span></div></div>
+    <div class="skill-group"><strong>Database & productivity</strong><div class="chips"><span class="chip">MySQL</span><span class="chip">Microsoft Excel</span><span class="chip">MS Office</span></div></div>
+    <div class="skill-group"><strong>Developer tools</strong><div class="chips"><span class="chip">Visual Studio Code</span><span class="chip">Eclipse</span><span class="chip">Git</span></div></div>
+    <div class="skill-group"><strong>Areas of interest</strong><div class="chips"><span class="chip">Data Analytics</span><span class="chip">Software Development</span><span class="chip">Problem Solving</span><span class="chip">UI Design</span></div></div>
+   </div>
+  </div>
+ </div>
+</section>
+
+<section id="features">
+ <div class="wrap">
+  <div class="section-head"><div class="kicker">03 / What I do</div><h2 class="section-title">Turning learning into practical skills.</h2><p class="sub">These are the areas I am exploring and developing through coursework, practice and personal projects.</p></div>
+  <div class="feature-grid">
+   <article class="feature"><div class="feature-icon">⌘</div><h3>Programming</h3><p>Writing structured code, understanding core programming concepts and practising logic-building with Java, Python and C#.</p></article>
+   <article class="feature"><div class="feature-icon">▤</div><h3>Web Development</h3><p>Creating responsive web pages with HTML and CSS, learning interactive interfaces and improving usability across screen sizes.</p></article>
+   <article class="feature"><div class="feature-icon">▦</div><h3>Database Management</h3><p>Working with relational data, MySQL queries and the fundamentals of storing, retrieving and organizing information.</p></article>
+   <article class="feature"><div class="feature-icon">▥</div><h3>Data Analytics</h3><p>Exploring how spreadsheets, data cleaning and analysis can help uncover patterns and communicate useful insights.</p></article>
+   <article class="feature"><div class="feature-icon">✎</div><h3>Problem Solving</h3><p>Breaking a task into smaller steps, researching solutions, testing ideas and improving the result through iteration.</p></article>
+   <article class="feature"><div class="feature-icon">↗</div><h3>Creative Digital Work</h3><p>Interested in content creation, visual presentation and digital tools that help communicate ideas effectively.</p></article>
+  </div>
+ </div>
+</section>
+
+<section id="projects">
+ <div class="wrap">
+  <div class="section-head"><div class="kicker">04 / Projects</div><h2 class="section-title">A few things from my project journey.</h2><p class="sub">One academic project and two project concepts I plan to build and document as I develop my skills.</p></div>
+  <div class="project-grid">
+   <article class="project"><div class="project-no">PROJECT 01 · ACADEMIC</div><h3>Student Management System</h3><p>A Java and MySQL application for managing student records. The concept covers adding, viewing, updating, searching and organizing student information in a structured way.</p><div class="tags"><span>Java</span><span>MySQL</span><span>CRUD</span></div><div class="project-status">Academic project · Add screenshots and repository link when available</div></article>
+   <article class="project"><div class="project-no">PROJECT 02 · PLANNED</div><h3>Sales Analytics Dashboard</h3><p>A data project to explore sales performance through monthly revenue, product comparisons and category-level summaries, with clear charts and key metrics.</p><div class="tags"><span>Excel</span><span>Python</span><span>Data analysis</span></div><div class="project-status">Project idea · Not yet presented as completed</div></article>
+   <article class="project"><div class="project-no">PROJECT 03 · PLANNED</div><h3>Personal Expense Tracker</h3><p>A responsive web app concept to record daily spending, organize expenses by category and show monthly totals to make personal budgeting easier.</p><div class="tags"><span>HTML</span><span>CSS</span><span>JavaScript</span></div><div class="project-status">Project idea · Not yet presented as completed</div></article>
+  </div>
+  <p class="note">Project descriptions are intentionally labelled as academic or planned so visitors can clearly distinguish completed work from future ideas.</p>
+ </div>
+</section>
+
+<section id="contact">
+ <div class="wrap">
+  <div class="section-head"><div class="kicker">05 / Contact</div><h2 class="section-title">Let's start a conversation.</h2><p class="sub">Have a project idea, collaboration opportunity or just want to connect? Reach out through any of the channels below.</p></div>
+  <div class="contact-grid">
+   <div class="panel">
+    <h3>Contact details</h3>
+    <p>I'm happy to connect about learning, technology, projects and creative collaborations.</p>
+    <div class="contact-methods">
+     <a class="contact-method" href="tel:+918750770627"><span class="contact-icon">☎</span><span><small>Mobile number</small><strong>+91 87507 70627</strong></span></a>
+     <a class="contact-method" href="mailto:Binarywithayush@gmail.com"><span class="contact-icon">✉</span><span><small>Email address</small><strong>Binarywithayush@gmail.com</strong></span></a>
+    </div>
+    <div class="socials">
+     <a class="social-link" href="https://www.instagram.com/ayushxbhadauriya_0005/" target="_blank" rel="noopener noreferrer">Instagram ↗</a>
+     <a class="social-link" href="https://www.linkedin.com/in/ayushsingh0001/" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a>
+    </div>
+   </div>
+   <div class="cta">
+    <div class="kicker">Open to opportunities</div>
+    <h2 style="font-size:1.8rem;line-height:1.25;margin-top:12px">Let's learn, build and grow together.</h2>
+    <p>I'm interested in connecting with developers, creators, teams and people who enjoy building useful things. Send me a message using the form below.</p>
+    <form class="contact-form" id="contactForm">
+     <div class="form-field"><label for="visitorName">Your name</label><input id="visitorName" name="name" type="text" autocomplete="name" placeholder="Enter your name" required></div>
+     <div class="form-field"><label for="visitorEmail">Your email</label><input id="visitorEmail" name="email" type="email" autocomplete="email" placeholder="you@example.com" required></div>
+     <div class="form-field"><label for="visitorMessage">Your message</label><textarea id="visitorMessage" name="message" placeholder="Write your message..." required></textarea></div>
+     <button class="btn primary" type="submit">Prepare email ↗</button>
+     <p class="form-help">Your email app will open with the message filled in. Review it and press Send to deliver.</p>
+    </form>
+    <div class="actions">
+     <a class="btn primary" href="mailto:Binarywithayush@gmail.com?subject=Hello%20Ayush">Send an email ↗</a>
+     <a class="btn" href="https://www.linkedin.com/in/ayushsingh0001/" target="_blank" rel="noopener noreferrer">Connect on LinkedIn</a>
+    </div>
+   </div>
+  </div>
+ </div>
+</section>
+</main>
+<footer><div class="wrap footer-inner"><span>© <span id="year"></span> Ayush Singh · Personal Portfolio</span><span>Designed with purpose. Built with HTML, CSS & JavaScript.</span></div></footer>
+<script>
+document.getElementById('year').textContent=new Date().getFullYear();
+const menuBtn=document.getElementById('menuBtn'),nav=document.getElementById('navlinks');
+menuBtn.addEventListener('click',()=>{const open=nav.classList.toggle('open');menuBtn.setAttribute('aria-expanded',String(open));menuBtn.textContent=open?'✕':'☰';});
+nav.querySelectorAll('a').forEach(link=>link.addEventListener('click',()=>{nav.classList.remove('open');menuBtn.setAttribute('aria-expanded','false');menuBtn.textContent='☰';}));
+document.getElementById('contactForm').addEventListener('submit',function(event){
+ event.preventDefault();
+ const name=document.getElementById('visitorName').value.trim();
+ const email=document.getElementById('visitorEmail').value.trim();
+ const message=document.getElementById('visitorMessage').value.trim();
+ const subject=`Portfolio enquiry from ${name}`;
+ const body=`Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`;
+ window.location.href=`mailto:Binarywithayush@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+});
+</script>
+</body>
+</html>
